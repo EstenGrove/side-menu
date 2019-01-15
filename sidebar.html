@@ -1,0 +1,79 @@
+<!-- ******************************************
+*  Author : Esten Grove   
+*  Created On : Sun Jan 13 2019
+*  File : sidebar.html
+******************************************* -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="Esten Grove">
+    <link rel="stylesheet" href="styles.css">
+    <title>Overlapping Side Menu</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <svg class="icon">
+            <use xlink:href="sprite.svg#icon-menu"></use>
+        </svg>
+    </nav>
+    <section class="nav-wrapper">
+        <div class="side-nav">
+            <a href="#" class="sideLink">Home</a>
+            <a href="#" class="sideLink">Works</a>
+            <a href="#" class="sideLink">About</a>
+            <a href="#" class="sideLink">Contact</a>
+            <svg class="icon close">
+                <use xlink:href="sprite.svg#icon-close"></use>
+            </svg>
+        </div>
+    </section>
+    <section class="wrapper">
+        <div class="container">
+            <h2 class="title">Reusable: Side Menu</h2>
+            <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dolorem molestiae
+                repellat! Dolor, nisi culpa aut quos obcaecati sit cupiditate repellat laudantium eos voluptas, odit
+                esse inventore iusto saepe? Quaerat?</p>
+            <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dolorem molestiae
+                repellat! Dolor, nisi culpa aut quos obcaecati sit cupiditate repellat laudantium eos voluptas, odit
+                esse inventore iusto saepe? Quaerat?</p>
+            <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dolorem molestiae
+                repellat! Dolor, nisi culpa aut quos obcaecati sit cupiditate repellat laudantium eos voluptas, odit
+                esse inventore iusto saepe? Quaerat?</p>
+            <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dolorem molestiae
+                repellat! Dolor, nisi culpa aut quos obcaecati sit cupiditate repellat laudantium eos voluptas, odit
+                esse inventore iusto saepe? Quaerat?</p>
+            <p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem dolorem molestiae
+                repellat! Dolor, nisi culpa aut quos obcaecati sit cupiditate repellat laudantium eos voluptas, odit
+                esse inventore iusto saepe? Quaerat?</p>
+        </div>
+    </section>
+
+    <script>
+        const mainNav = document.querySelector('.nav');
+        const sideNav = document.querySelector('.side-nav');
+        const navWrapper = document.querySelector('.nav-wrapper');
+        const sideLinks = document.querySelectorAll('.sideLink');
+        const closeBtn = document.querySelector('.close');
+        const bodyOpacity = document.querySelector('body');
+
+        //Click Event
+        mainNav.addEventListener('click', (e) => {
+            navWrapper.classList.remove('hide');
+            navWrapper.classList.add('scale-in-hor-left');
+            navWrapper.classList.add('show');
+        })
+        closeBtn.addEventListener('click', (e) => {
+            navWrapper.classList.remove('scale-in-hor-left');
+            navWrapper.classList.remove('show');
+            navWrapper.classList.add('hide');
+        })
+    </script>
+</body>
+
+</html>
